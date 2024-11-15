@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DGrace Paypal Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <section class="cart">
+    <h2>Your Shopping Cart</h2>
+
+    <div class="cart-item" id="item1">
+      <img src="https://placehold.co/150x150" alt="Item 1" class="item-image">
+      <div class="item-details">
+        <h3>Item Name 1</h3>
+        <p>Price: $10</p>
+        <label for="quantity1">Quantity:</label>
+        <input type="number" id="quantity1" value="1" min="1" onchange="updatePrice()">
+        <button class="remove-btn">Remove</button>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <p id="cartValue"><strong>Total: $10</strong></p>
+    </div>
+  </section>
+
+  <section class="user-details">
+    <div class="row">
+      <div class="column">
+        <h2>Shipping Information</h2>
+        <form>
+          <div class="row">
+            <div class="column">
+              <label for="first-name">First Name:</label>
+              <input type="text" id="first-name" value="Dylan" required></input>
+
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" value="Grace" required>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" value="dylangification@gmail.com" required>
+
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" value="201-438-0474" required>
+            </div>
+            <div class="column">
+
+              <label for="address-line1">Address Line 1:</label>
+              <input type="text" id="address-line1" value="2379 Passaic Street" required>
+
+              <label for="address-line2">Address Line 2:</label>
+              <input type="text" id="address-line2" value="Rutherford">
+
+              <label for="state-province">State/Province:</label>
+              <input type="text" id="state-province" value="New Jersey" required>
+
+              <label for="zip-code">Zip/Postal Code:</label>
+              <input type="text" id="zip-code" value="07070" required>
+
+              <label for="country">Country:</label>
+              <input type="text" id="country" value="United States" required>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="column">
+        <div id="paypal-button-container"></div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <p>Thank you for your purchase! Transaction ID: </p><p id="transactionID"></p>
+            <button class="refund-btn" id="refund-btn">Refund</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=Ac4t03S4CIpv0wrrv4NvzomZU5aUFX6_hNkfzvoZzRkgOAoJJApu9Pog-f4LslvpDSeheQ0kZm1_zuXA&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo,paylater,card"
+    data-sdk-integration-source="developer-studio"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
